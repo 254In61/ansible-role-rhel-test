@@ -13,12 +13,14 @@
       - "distribution_major_version : {{ ansible_distribution_major_version }}"
       
 - name: Collect some information
-  ansible.builtin.shell: "date && ls -al"
+  ansible.builtin.shell: "date && hostname"
   register: config_output
+  delegate_to: localhost
   when: _date_ == true
 
 - name: Save the data to a temporary config store
   ansible.builtin.copy:
     content: "{{ config_output['stdout'] }}"
     dest: "{{ _tmp_file_ }}"
+    force: yes  # The copy module defaults to not overwriting when the content hasn’t changed, but force: yes guarantees overwrite.
   delegate_to: localhost
