@@ -1,5 +1,17 @@
 ---
 # Simulate network device running config collection
+- name: Print dates
+  ansible.builtin.debug:
+    msg:
+      - "date : {{ ansible_date_time['date'] }}"
+      - "time : {{ ansible_date_time['time'] }}"
+
+- name: Debug distribution and version
+  ansible.builtin.debug:
+    msg:
+      - "distribution : {{ ansible_distribution }}"
+      - "distribution_major_version : {{ ansible_distribution_major_version }}"
+      
 - name: Collect some information
   ansible.builtin.shell: "date && ls -al"
   register: config_output
