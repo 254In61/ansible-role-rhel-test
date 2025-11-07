@@ -20,5 +20,5 @@
 - name: Save the data to a temporary config store
   ansible.builtin.copy:
     content: "{{ config_output['stdout'] }}"
-    dest: "{{ _tmp-file_ }}"
+    dest: "{{ _tmp_file_ }}"
   delegate_to: localhost
