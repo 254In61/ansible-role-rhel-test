@@ -15,7 +15,7 @@
 - name: Collect some information
   ansible.builtin.shell: "date && hostname"
   register: config_output
-  delegate_to: localhost
+  # delegate_to: localhost
   when: _date_ == true
 
 - name: Save the data to a temporary config store
