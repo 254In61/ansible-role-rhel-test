@@ -17,8 +17,7 @@ This is just a test role
 # How to use
 
 1. If running as ansible core : 
-- Install the role : $ ansible-galaxy install -r collections/requirements.yml
-  ** The collections/requirements.yml file will be in your tool's repo**
+- Install the role : $ ansible-galaxy install -r roles/requirements.yml
 
 2. If running on AAP :
 - AAP has an automated job( Which one??) that will pull down and install the mentioned roles before running the job. 
